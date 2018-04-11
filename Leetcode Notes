@@ -10,3 +10,25 @@ int binarySearch(vector<int>& nums,int target){
   }
   return left;
 }
+
+class solution{
+public:
+  vector<int> plusoOne(vector<int>& digits){
+    int length = digits.size()-1;
+    caryOrNot(digits,length);
+    return digits;
+  }
+  
+  void carryOrNot(vector<int>& nums,depth){
+    if(nums[depth]==9){
+      if(depth==0)  
+        nums[depth]=0;
+        nums.insert(nums.begin(),1);
+      else
+        nums[depth]=0;
+        carryOrNot(nums,depth-1);
+    }
+    else
+      digits[depth]+=1;  
+  }
+};
