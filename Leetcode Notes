@@ -32,3 +32,19 @@ public:
       digits[depth]+=1;  
   }
 };
+
+Add Binary
+/*use ASCII code to do the math
+*
+*/
+string addBinary(string a, string b) {
+        string str = ""; 
+        int carry = 0, ptA = a.size()-1, ptB = b.size()-1;
+        while(ptA>=0 || ptB>=0 || carry==1){
+            carry += ptA>=0 ? a[ptA--]-'0':0;
+            carry += ptB>=0 ? b[ptB--]-'0':0;
+            str = char(carry%2 + '0')+str;
+            carry /= 2;
+        }
+        return str;
+    }
