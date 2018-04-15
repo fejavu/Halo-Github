@@ -82,3 +82,29 @@ string addBinary(string a, string b) {
             return prevHead.next;
         }
     };
+/*217. Contains Duplicate
+*Given an array of integers, find if the array contains any duplicates.
+*Your function should return true if any value appears at least twice in the array,
+*and it should return false if every element is distinct.
+*
+*/
+static int x=[](){
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    return 0;
+}
+class Solution{
+public:
+    bool containsDuplicate1(vector<int>& nums){
+        return (nums.size() > set<int>(nums.begin(),nums.end()).size());//set method doesn't contain repeat elements
+    }
+
+    bool containsDuplicate2(vector<int>& nums){
+        sort(nums.begin(),nums.end());
+        for(int i = 1;i<nums.size();i++){
+            if(nums[i]==nums[i - 1])
+                return true;
+        }
+        return false;
+    }
+};
