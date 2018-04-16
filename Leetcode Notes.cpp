@@ -117,3 +117,41 @@ bool containsDuplicate2(vector<int>& nums){
   return false;
 }
 };
+
+/*167.Two Sum II - Input array is sorted
+*
+*/
+class solution{
+public:
+  std::vector<int> twoSum1(std::vector<int>& nums,int target){
+    int lo = 0,hi = nums.size()-1;
+    while(nums[lo]+nums[hi]!=target){
+      if (nums[lo]+nums[hi]<target){
+        lo++;
+      }else{
+        hi--;
+      }
+    }
+    return std::vector<int> {lo+1,hi+1};
+  };
+
+  std::vector<int> twoSum2(std::vector<int>& nums,int target ){
+    if(nums.empty())
+      return {};
+    for (int i = 0; i < nums.size()-1;i++){
+      int start = i+1,end = nums.size()-1,gap=target-nums[i];
+      while(start<=end){
+        int m = start+(end-start)/2;
+        if(nums[m]==gap) return {i+1,m+1};
+        else if(nums[m]>gap){
+          end = m-1;
+          /* code */
+        }else{
+          start = m+1;
+        }
+      }
+      /* code */
+    }
+  };
+  
+};
