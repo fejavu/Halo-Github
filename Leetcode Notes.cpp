@@ -153,6 +153,46 @@ public:
       }
     }
     return res;
-  };  
+  };
+
+  /*350.Given two arrays, 
+  *write a function to compute their intersection.
+  *
+  */
+  vector<int> intersect2(vector<int>& nums1, vector<int>& nums2) {
+   sort(nums1.begin(),nums1.end());
+   sort(nums2.begin(),nums2.end());
+   vector<int> res;
+   int l1=0,l2=0;
+   int r1=nums1.size(),r2=nums2.size();
+   while(l1<r1 && l2<r2){
+     if(nums1[l1]==nums2[l2]){
+       res.push_back(nums1[l1]);
+       l1++;
+       l2++;
+     }else if(nums1[l1]>nums2[l2]){
+      l2++;
+    }else{
+      l1++;
+    }
+  }
+  return res;
+}
+
+vector<int> intersect2_1(vector<int>& nums1,vector<int>& nums2){
+  unordered_map<int,int> tmp;
+  std::vector<int> res;
+  for (int i = 0; i < nums1.size(); i++){
+    tmp[nums1[i]]++;
+  }
+  for (int i = 0; i < nums2.size(); i++){
+    if (tmp[nums2[i]]>0){
+      res.push_back(nums2[i]);
+      tmp[nums2[i]]--;  // In case of the repeat calls of push_back while the nums1 get only one;
+    }
+  }
+  return res;
+}
+
 
 };
