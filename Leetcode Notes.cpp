@@ -194,5 +194,20 @@ vector<int> intersect2_1(vector<int>& nums1,vector<int>& nums2){
   return res;
 }
 
+  /*387. First Unique Character in a String
+  *Given a string, find the first non-repeating 
+  *character in it and return it's index. If it doesn't exist, return -1.
+  */
+
+  int firstUniqChar(string s){
+    unordered_map<char,int> m;
+    for (int i = 0; i < size(); i++){
+      m[s[i]-'a']++;
+    }
+    for (int i = 0; i < s.size(); i++){
+      if(m[s[j]-'a']==1)  return j;
+    }
+    return -1;
+  }
 
 };
