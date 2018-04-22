@@ -202,10 +202,23 @@ vector<int> intersect2_1(vector<int>& nums1,vector<int>& nums2){
   int firstUniqChar(string s){
     unordered_map<char,int> m;
     for (int i = 0; i < size(); i++){
-      m[s[i]-'a']++;
+      m[s[i]]++;
     }
     for (int i = 0; i < s.size(); i++){
-      if(m[s[j]-'a']==1)  return j;
+      if(m[s[j]]==1)  return j;
+    }
+    return -1;
+  }
+
+  int firstUniqChar2(string s){
+    std::vector<int> v(26);
+    for (int i = 0; i < s.length(); i++){
+      v[s[i]-'a']++;
+    }
+    for (int i = 0; i < s.length(); i++){
+      if (v[s[i]-'a']==1){
+        return i;
+      }
     }
     return -1;
   }
