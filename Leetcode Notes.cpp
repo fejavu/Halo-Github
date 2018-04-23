@@ -223,4 +223,33 @@ vector<int> intersect2_1(vector<int>& nums1,vector<int>& nums2){
     return -1;
   }
 
+  /*69. Sqrt(x)
+  *实现 int sqrt(int x) 函数。
+  *计算并返回 x 的平方根，其中 x 是非负整数。
+  *由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。 
+  *二分查找；乘法溢出；
+  */
+  int mySqrt(int x) {
+    if(x<2)    
+      return x;
+    int l=1,r=x;
+    while(l<r){
+      int mid=l+(r-l)/2;
+      if(mid<=(x/mid))
+        l=mid+1;
+      else if(mid>(x/mid))
+        r=mid;
+    }
+    return  r-1;
+  }
+
+  int mySqrt2(int x){
+    long r = x;
+    long a = x;
+    while(r * r > a) {
+      r = (r + a / r) / 2;
+    }
+    return r;    
+  }
+
 };
