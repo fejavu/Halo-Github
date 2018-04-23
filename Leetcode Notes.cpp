@@ -252,4 +252,21 @@ vector<int> intersect2_1(vector<int>& nums1,vector<int>& nums2){
     return r;    
   }
 
+  /*================================================
+    = #367. Valid Perfect Square
+    ================================================
+  */
+    bool isPerfectSquare(int num) {
+      if(num<2)    
+        return true;
+      int l=1,r=num;
+      while(l<r){
+        int mid=l+(r-l)/2;
+        if(mid<=(num/mid))
+          l=mid+1;
+        else if(mid>(num/mid))
+          r=mid;
+      }
+      return  num==(r-1)*(r-1);
+    }
 };
