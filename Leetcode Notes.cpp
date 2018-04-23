@@ -269,4 +269,21 @@ vector<int> intersect2_1(vector<int>& nums1,vector<int>& nums2){
       }
       return  num==(r-1)*(r-1);
     }
+  
+  /*================================================
+    = #633. Sum of Square Numbers
+    ================================================
+  */
+
+    bool judgeSquareSum(int c) {
+      int b=(int)std::sqrt(c);
+      int a=0;
+      while(b>=a){
+        long num = a*a+b*b; 
+        if(num>c)   b--;
+        else if (num<c) a++;
+        else return true; 
+      }
+      return false;
+    }
 };
