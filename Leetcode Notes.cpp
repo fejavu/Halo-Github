@@ -1,8 +1,10 @@
-  /*This is my notes about LeetCode
-  * Every problem I think it is meaningful
-  * will be noted here.
-  *
-  * I SAY WE MAKE IT POP
+  /*
+  ================================================
+  = This is my notes about LeetCode              =
+  = Every problem I think it is meaningful       =
+  = will be noted here.                          =
+  = I SAY WE MAKE IT POP                         =
+  ================================================
   */
 
 static const auto __=[](){
@@ -42,7 +44,7 @@ public:
     int left = 0;
     int right = nums.size()-1;
     while(left<=right){
-    int mid = left + (right-left)/2; //avoid of overflow
+      int mid = left + (right-left)/2; //avoid of overflow
     if(nums[mid]<target)
       left = mid+1;
     else
@@ -51,8 +53,11 @@ public:
     return left;
   }
 
-  /*#Add Binary
-  * use ASCII code to do the math
+  /*
+  ================================================
+  = Add Binary
+  = use ASCII code to do the math
+  ================================================
   */
   string addBinary(string a, string b) {
     string str = "";
@@ -66,15 +71,19 @@ public:
     return str;
   }
 
-/*#Add Two Numbers
- *You are given two non-empty linked lists representing two non-negative integers.
- *The digits are stored in reverse order and each of their nodes contain a single digit.
- *Add the two numbers and return it as a linked list.
-  struct ListNode{
-    int val;
-    ListNode *next;
-    ListNode(int x):val(x),next(NULL){}
-  };*/
+  /*
+  ================================================
+  = Add Two Numbers
+  = You are given two non-empty linked lists representing two non-negative integers.
+  = The digits are stored in reverse order and each of their nodes contain a single digit.
+  = Add the two numbers and return it as a linked list.
+  = struct ListNode{
+  =   int val;
+  =   ListNode *next;
+  =   ListNode(int x):val(x),next(NULL){}
+  = };
+  ================================================
+  */
     ListNode* addTwoNumbers(ListNode* l1,ListNode* l2) {
       ListNode prevHead(0),*pt = &prevHead;
       int carry = 0;
@@ -89,10 +98,13 @@ public:
      return prevHead.next;
    }
 
-  /*217. Contains Duplicate
-  *Given an array of integers, find if the array contains any duplicates.
-  *Your function should return true if any value appears at least twice in the array,
-  *and it should return false if every element is distinct.
+  /*
+  ================================================
+  = 217. Contains Duplicate
+  = Given an array of integers, find if the array contains any duplicates.
+  = Your function should return true if any value appears at least twice in the array,
+  = and it should return false if every element is distinct.
+  ================================================
   */
 
   bool containsDuplicate1(vector<int>& nums){
@@ -108,8 +120,10 @@ public:
     return false;
   }
 
-  /*167.Two Sum II - Input array is sorted
-  *
+  /*
+  ================================================
+  = 167.Two Sum II - Input array is sorted
+  ================================================
   */
   std::vector<int> twoSum1(std::vector<int>& nums,int target){
     int lo = 0,hi = nums.size()-1;
@@ -140,8 +154,10 @@ public:
     }
   };
 
-  /*349. Intersection of Two Arrays
-  *
+  /*
+  ================================================
+  = 349. Intersection of Two Arrays
+  ================================================
   */
   vector<int> intersection(vector<int>& nums1,vector<int>& nums2){
     unordered_set<int> m(nums1.begin(),nums1.end());
@@ -155,9 +171,11 @@ public:
     return res;
   };
 
-  /*350.Given two arrays, 
-  *write a function to compute their intersection.
-  *
+  /*
+  ================================================
+  = 350.Given two arrays, 
+  = write a function to compute their intersection.
+  ================================================
   */
   vector<int> intersect2(vector<int>& nums1, vector<int>& nums2) {
    sort(nums1.begin(),nums1.end());
@@ -194,9 +212,12 @@ vector<int> intersect2_1(vector<int>& nums1,vector<int>& nums2){
   return res;
 }
 
-  /*387. First Unique Character in a String
-  *Given a string, find the first non-repeating 
-  *character in it and return it's index. If it doesn't exist, return -1.
+  /*
+  ================================================
+  = 387. First Unique Character in a String
+  = Given a string, find the first non-repeating 
+  = character in it and return it's index. If it doesn't exist, return -1.
+  ================================================
   */
 
   int firstUniqChar(string s){
@@ -223,11 +244,14 @@ vector<int> intersect2_1(vector<int>& nums1,vector<int>& nums2){
     return -1;
   }
 
-  /*69. Sqrt(x)
-  *实现 int sqrt(int x) 函数。
-  *计算并返回 x 的平方根，其中 x 是非负整数。
-  *由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。 
-  *二分查找；乘法溢出；
+  /*
+  ================================================
+  = 69. Sqrt(x)
+  = 实现 int sqrt(int x) 函数。
+  = 计算并返回 x 的平方根，其中 x 是非负整数。
+  = 由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。 
+  = 二分查找；乘法溢出；
+  ================================================
   */
   int mySqrt(int x) {
     if(x<2)    
@@ -252,9 +276,10 @@ vector<int> intersect2_1(vector<int>& nums1,vector<int>& nums2){
     return r;    
   }
 
-  /*================================================
-    = #367. Valid Perfect Square
-    ================================================
+  /*
+  ================================================
+  = 367. Valid Perfect Square
+  ================================================
   */
     bool isPerfectSquare(int num) {
       if(num<2)    
@@ -270,11 +295,11 @@ vector<int> intersect2_1(vector<int>& nums1,vector<int>& nums2){
       return  num==(r-1)*(r-1);
     }
   
-  /*================================================
-    = #633. Sum of Square Numbers
-    ================================================
+  /*
+  ================================================
+  = #633. Sum of Square Numbers
+  ================================================
   */
-
     bool judgeSquareSum(int c) {
       int b=(int)std::sqrt(c);
       int a=0;
