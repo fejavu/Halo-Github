@@ -11,13 +11,13 @@ static const auto __=[](){
   ios::sync_with_stdio(false);//speed up to in and out
   cin.tie(nullptr);
   return nullptr;
-}
+};
 
 static int x=[](){
   ios::sync_with_stdio(false);
   cin.tie(NULL);
   return 0;
-}
+};
 
 class solution{
 public:
@@ -324,4 +324,30 @@ vector<int> intersect2_1(vector<int>& nums1,vector<int>& nums2){
       }else
         return tmp*tmp;
     }
+  /*
+  ================================================
+  = #441.Arranging Coins
+  ================================================
+  */
+  int arrangeCoins(int n){
+    if(n==0)  return 0;
+    int i=0;
+    while(n>=i){
+      n-=i;
+      i++;
+    }
+    return --i;
+  }
+
+  int arrangeCoins2(int n){
+        /* 
+        (1+k)*k/2 = n
+        k+k*k = 2*n
+        k*k + k + 0.25 = 2*n + 0.25
+        (k + 0.5) ^ 2 = 2*n +0.25
+        k + 0.5 = sqrt(2*n + 0.25)
+        k = sqrt(2*n + 0.25) - 0.5
+        */
+    return (int)(math.sqrt(2*(long)n+0.25)-0.5);
+  }
 };
