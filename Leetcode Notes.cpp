@@ -11,13 +11,13 @@ static const auto __=[](){
   ios::sync_with_stdio(false);//speed up to in and out
   cin.tie(nullptr);
   return nullptr;
-};
+}();
 
 static int x=[](){
   ios::sync_with_stdio(false);
   cin.tie(NULL);
   return 0;
-};
+}();
 
 class solution{
 public:
@@ -349,5 +349,42 @@ vector<int> intersect2_1(vector<int>& nums1,vector<int>& nums2){
         k = sqrt(2*n + 0.25) - 0.5
         */
     return (int)(math.sqrt(2*(long)n+0.25)-0.5);
+  }
+
+  /*
+  ================================================
+  = #744. Find Smallest Letter Greater Than Target
+  ================================================
+  */
+  char nextGreaterestLetter(std::vector<char>& letters,char target){
+    auto i = letters.begin();
+    for(;i!=letters.end();i++){
+      if(*i>target)
+        return *i;
+    }
+    if(i==letters.end())
+      return letters[0];
+  }
+
+  char nextGreaterestLetter2(std::vector<char>& letters,char target){
+    auto res = upper_bound(letters.begin(),letters.end(),target);
+    if(res==letters.end())
+    return letters[0];
+    return *res;
+  }
+
+  /*
+  ================================================
+  = #744. Find Smallest Letter Greater Than Target
+  ================================================
+  */
+  int romanToInt(string s){
+    map<char,int> rToI = {{'I',1},{'V',5},{'X',10},{'L',50},{'C',100},{'D',500},{'M',1000}}; 
+    int res = 0;
+    for(auto pt = s.begin();pt != s.end();pt++){
+        int tmp = rToI[*pt];
+        res += ((pt != s.end()-1) && rToI[*pt] < rToI[*(pt+1)]) ? -tmp:tmp;
+    }
+    return res;
   }
 };
