@@ -387,4 +387,23 @@ vector<int> intersect2_1(vector<int>& nums1,vector<int>& nums2){
     }
     return res;
   }
+
+  /*
+  ================================================
+  = #14. Longest Common Prefix
+  ================================================
+  */
+  string longestCommonPrefix(std::vector<string>& strs){
+    string res;
+    char ch;
+    if(strs.size()<1) return res;
+    for(int i = 0;;i++){
+      ch = strs[0][i];
+      for(auto s:strs)
+        if((i+1 > s.size()) || ch != s.[i])
+          return res;
+        res.push_back(ch);
+    }
+    return res;
+  }
 };
