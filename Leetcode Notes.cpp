@@ -406,4 +406,21 @@ vector<int> intersect2_1(vector<int>& nums1,vector<int>& nums2){
     }
     return res;
   }
+
+  /*
+  ================================================
+  = #20. 有效的括号
+  ================================================
+  */
+  bool isValid(string s) {
+    std::stack<char> buffer;
+    for(char& c : s){
+      if(buffer.empty() || c - buffer.top() != 1 && c - buffer.top() != 2)
+        buffer.push(c);
+      else
+        buffer.pop();
+    }
+    return buffer.empty();
+  }
+
 };
