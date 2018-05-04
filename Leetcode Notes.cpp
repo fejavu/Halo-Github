@@ -422,5 +422,18 @@ vector<int> intersect2_1(vector<int>& nums1,vector<int>& nums2){
     }
     return buffer.empty();
   }
+  bool isValid2(string s){
+    stack<char> st;
+    for(auto& i:s){
+      if(!st.empty()){
+        if(st.top()=='{' && i == '}')       st.pop();
+        else if (st.top()=='[' && i == ']') st.pop();
+        else if (st.top()=='(' && i == ')') st.pop();
+        else                                st.push(i);
+      }
+      else                                  st.push(i);
+    }
+    return st.empty();
+}
 
 };
