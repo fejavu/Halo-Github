@@ -2,8 +2,9 @@
   ================================================
   = This is my notes about LeetCode              =
   = Every problem I think it is meaningful       =
-  = will be noted here.                          =
+  = will be noted here                           =
   = I SAY WE MAKE IT POP                         =
+  = Make it a dairy and keep going               =
   ================================================
   */
 
