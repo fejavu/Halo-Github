@@ -9,3 +9,11 @@ function common(o) {
 	}
 	console.log(j);
 }
+
+function judge() {
+	var trueJudge = true;
+	var falseJudge = false;
+	var numVar = 1;
+
+	return numVar ? trueJudge:falseJudge; 
+}
