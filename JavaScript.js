@@ -17,3 +17,9 @@ function judge() {
 
 	return numVar ? trueJudge:falseJudge; 
 }
+
+function judgeNan() {
+	var varia = NaN;
+
+	return varia !== varia; //It will return true.
+}
